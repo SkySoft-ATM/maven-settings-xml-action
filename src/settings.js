@@ -66,9 +66,9 @@ function updateRepositories(templateXml) {
 }
 
 function updatePluginRepositories(templateXml) {
-    var repositoriesInput = core.getInput('pluginRepositories');
+    var pluginRepositoriesInput = core.getInput('pluginRepositories');
 
-    if (!repositoriesInput) {
+    if (!pluginRepositoriesInput) {
         return;
     }
 
@@ -76,11 +76,11 @@ function updatePluginRepositories(templateXml) {
         templateXml.getElementsByTagName('profiles')[0]
             .getElementsByTagName('pluginRepositories')[0];
 
-    JSON.parse(repositoriesInput).forEach((repositoryInput) => {
+    JSON.parse(pluginRepositoriesInput).forEach((pluginRepositoryInput) => {
         var repositoryXml = templateXml.createElement('pluginRepository');
-        for (var key in repositoryInput) {
+        for (var key in pluginRepositoryInput) {
             var keyXml = templateXml.createElement(key);
-            keyXml.textContent = repositoryInput[key];
+            keyXml.textContent = pluginRepositoryInput[key];
             repositoryXml.appendChild(keyXml);
         }
         repositoriesXml.appendChild(repositoryXml);
