@@ -91,5 +91,6 @@ module.exports = {
     getSettingsTemplate,
     writeSettings,
     updateServers,
-    updateRepositories
+    updateRepositories,
+    updatePluginRepositories
 }
