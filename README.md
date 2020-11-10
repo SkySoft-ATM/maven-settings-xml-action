@@ -45,6 +45,11 @@ Reference: [Maven Settings > Plugin Repositories](http://maven.apache.org/settin
 
 Reference: [Maven Settings > Repositories](http://maven.apache.org/settings.html#Plugin_Repositories)
 
+### `plugin_groups`
+**Optional** json array of plugin groups to add to settings.xml
+
+Reference: [Maven Settings > Profiles](http://maven.apache.org/settings.html#Plugin_Groups)
+
 ### `profiles`
 **Optional** json array of profiles to add to settings.xml
 
