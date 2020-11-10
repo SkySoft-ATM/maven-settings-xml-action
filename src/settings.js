@@ -196,6 +196,6 @@ module.exports = {
     updateMirrors,
     updateRepositories,
     updatePluginRepositories,
-    updateProfiles
+    updateProfiles,
 	updatePluginGroups
 }
