@@ -179,12 +179,8 @@ function updatePluginGroups(templateXml) {
 
     JSON.parse(pluginGroupsInput).forEach((pluginGroupInput) => {
         var pluginGroupXml = templateXml.createElement('pluginGroup');
-        for (var key in pluginGroupInput) {
-            var keyXml = templateXml.createElement(key);
-            keyXml.textContent = pluginGroupInput[key];
-            pluginGroupXml.appendChild(keyXml);
-        }
-        pluginGroupsXml.appendChild(pluginGroupXml);
+        pluginGroupXml.textContent = pluginGroupInput;
+        pluginGroupsXml.appendChild(pluginGroupInput);
     });
 
 }
