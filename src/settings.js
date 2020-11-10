@@ -179,8 +179,8 @@ function updatePluginGroups(templateXml) {
 
     JSON.parse(pluginGroupsInput).forEach((pluginGroupInput) => {
         var pluginGroupXml = templateXml.createElement('pluginGroup');
-        pluginGroupXml.textContent = pluginGroupInput.textContent;
-        pluginGroupsXml.appendChild(pluginGroupInput);
+        pluginGroupXml.textContent = pluginGroupInput;
+        pluginGroupsXml.appendChild(pluginGroupXml);
     });
 
 }
