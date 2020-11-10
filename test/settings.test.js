@@ -164,7 +164,7 @@ describe('run settings.js', function () {
     describe('#updatePluginGroups', function () {
         it('<pluginGroups/> should be appended with <pluginGroup> when input.pluginGroups is present', function () {
             // given input
-            process.env['INPUT_PLUGIN_GROUPS'] = '[{ "some.plugin.group.id" ]';
+            process.env['INPUT_PLUGIN_GROUPS'] = '[ "some.plugin.group.id" ]';
 
             // and default settings
             var xml = new DOMParser().parseFromString("<settings><pluginGroups/></settings>");
