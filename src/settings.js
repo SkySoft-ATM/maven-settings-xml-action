@@ -168,6 +168,27 @@ function updateProfiles(templateXml) {
     });
 }
 
+function updatePluginGroups(templateXml) {
+    var pluginGroupsInput = core.getInput('plugin_groups');
+
+    if (!pluginGroupsInput) {
+        return;
+    }
+
+    var pluginGroupsXml = templateXml.getElementsByTagName('pluginGroups')[0];
+
+    JSON.parse(pluginGroupsInput).forEach((pluginGroupInput) => {
+        var pluginGroupXml = templateXml.createElement('pluginGroup');
+        for (var key in pluginGroupInput) {
+            var keyXml = templateXml.createElement(key);
+            keyXml.textContent = pluginGroupInput[key];
+            pluginGroupXml.appendChild(keyXml);
+        }
+        pluginGroupsXml.appendChild(pluginGroupXml);
+    });
+
+}
+
 module.exports = {
     getSettingsTemplate,
     writeSettings,
@@ -176,4 +197,5 @@ module.exports = {
     updateRepositories,
     updatePluginRepositories,
     updateProfiles
+	updatePluginGroups
 }
