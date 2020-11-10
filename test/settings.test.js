@@ -170,7 +170,7 @@ describe('run settings.js', function () {
             var xml = new DOMParser().parseFromString("<settings><pluginGroups/></settings>");
 
             // when
-            settings.updateMirrors(xml);
+            settings.updatePluginGroups(xml);
 
             // then
             var expectedXml = '<settings><pluginGroups><pluginGroup>some.plugin.group.id</pluginGroup></pluginGroups></settings>';
